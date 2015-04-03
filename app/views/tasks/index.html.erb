@@ -1,21 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Tasks</h1>
+<h1>Tasks</h1>
+
+<%= form_for @task, remote: true do |f| %>
+    <%= f.text_field :title %>
+    <%= f.submit %>
+<% end %>
+
+</br>
 
 <table>
-
-  <tbody>
-    <% @tasks.each do |task| %>
-      <tr>
-        <td><%= check_box_tag task.title, task.title, task.done %>
-        <td><%= task.title %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <tbody id="tasks">
+    <%= render(@tasks) %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Task', new_task_path %>

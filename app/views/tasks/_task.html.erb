@@ -1,0 +1,15 @@
+
+<tr id="task_<%= task.id %>" >
+  <td><%= image_tag('move.png') %>
+  <td><%= check_box_tag task.title, task.title, task.done %>
+    <% if task.done==true %>
+      <td class='done'>
+    <% else %>
+      <td class='undone'>
+    <% end %>
+    <%= task.title %>
+  </td>
+  <td><%= link_to image_tag('edit.png'), edit_task_path(task) %></td>
+  <td><%= link_to image_tag('trash.png'), task, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
+</tr>
+

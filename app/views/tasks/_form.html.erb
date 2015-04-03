@@ -1,3 +1,10 @@
+<%= form_for @task, remote: true do |f| %>
+  <%= f.text_field :title %>
+  <%= f.submit %>
+<% end %>
+
+<!--
+
 <%= form_for(@task) do |f| %>
   <% if @task.errors.any? %>
     <div id="error_explanation">
@@ -23,3 +30,5 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+-->

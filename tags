@@ -1,0 +1,28 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Todolist
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+CreateTasks	db/migrate/20150401124830_create_tasks.rb	/^class CreateTasks < ActiveRecord::Migration$/;"	c
+Task	app/models/task.rb	/^class Task < ActiveRecord::Base$/;"	c
+TaskTest	test/models/task_test.rb	/^class TaskTest < ActiveSupport::TestCase$/;"	c
+TasksController	app/controllers/tasks_controller.rb	/^class TasksController < ApplicationController$/;"	c
+TasksControllerTest	test/controllers/tasks_controller_test.rb	/^class TasksControllerTest < ActionController::TestCase$/;"	c
+TasksHelper	app/helpers/tasks_helper.rb	/^module TasksHelper$/;"	m
+Todolist	config/application.rb	/^module Todolist$/;"	m
+change	db/migrate/20150401124830_create_tasks.rb	/^  def change$/;"	f	class:CreateTasks
+create	app/controllers/tasks_controller.rb	/^  def create$/;"	f	class:TasksController
+destroy	app/controllers/tasks_controller.rb	/^  def destroy$/;"	f	class:TasksController
+edit	app/controllers/tasks_controller.rb	/^  def edit$/;"	f	class:TasksController
+index	app/controllers/tasks_controller.rb	/^  def index$/;"	f	class:TasksController
+new	app/controllers/tasks_controller.rb	/^  def new$/;"	f	class:TasksController
+set_task	app/controllers/tasks_controller.rb	/^    def set_task$/;"	f	class:TasksController
+show	app/controllers/tasks_controller.rb	/^  def show$/;"	f	class:TasksController
+some	app/models/task.rb	/^  def some$/;"	f	class:Task
+task_params	app/controllers/tasks_controller.rb	/^    def task_params$/;"	f	class:TasksController
+update	app/controllers/tasks_controller.rb	/^  def update$/;"	f	class:TasksController
