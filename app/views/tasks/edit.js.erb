@@ -1,0 +1,2 @@
+$("#task_<%= @task.id %> .td_title").replaceWith('<td class="td_title" colspan="2"> <%= j(render 'form', submit_text: "Save") %> </td>');
+$("#task_<%= @task.id %> .td_edit").remove();

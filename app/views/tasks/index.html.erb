@@ -2,16 +2,15 @@
 
 <h1>Tasks</h1>
 
-<%= form_for @task, remote: true do |f| %>
-    <%= f.text_field :title %>
-    <%= f.submit %>
-<% end %>
+<%= render 'form', submit_text: "Add"%>
+
+<div id="error_message"></div>
 
 </br>
 
 <table>
   <tbody id="tasks">
-    <%= render(@tasks) %>
+    <%= render @tasks %>
   </tbody>
 </table>
 

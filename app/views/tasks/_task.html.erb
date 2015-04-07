@@ -1,15 +1,12 @@
-
 <tr id="task_<%= task.id %>" >
-  <td><%= image_tag('move.png') %>
-  <td><%= check_box_tag task.title, task.title, task.done %>
-    <% if task.done==true %>
-      <td class='done'>
-    <% else %>
-      <td class='undone'>
-    <% end %>
-    <%= task.title %>
-  </td>
-  <td><%= link_to image_tag('edit.png'), edit_task_path(task) %></td>
-  <td><%= link_to image_tag('trash.png'), task, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
-</tr>
 
+  <td class="td_move"><%= image_tag('move.png') %></td>
+  <td class="td_checkbox">
+    <%= form_for task, remote: true do |f| %>
+      <%= f.check_box(:done, checked: task.done, id: "task_checkbox_#{task.id}", class: 'task_checkbox') %>
+    <% end %>
+  </td>
+  <td class="td_title"><span class="<% if task.done==true %>done<% else %>undone<% end %>"><%= link_to task.title, edit_task_path(task), remote: true %></span></td>
+  <td class="td_edit"><%= link_to image_tag('edit.png'), edit_task_path(task), remote: true %></td>
+  <td class="td_delete"><%= link_to image_tag('trash.png'), task, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
+</tr>

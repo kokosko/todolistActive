@@ -1,3 +1,13 @@
 .done {
   text-decoration: line-through;
 }
+
+.td_title {
+  width: 240px;
+  word-wrap: break-word;
+}
+
+#error_message {
+  color: red;
+  font-weight: bold;
+}

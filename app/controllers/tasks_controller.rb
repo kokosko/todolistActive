@@ -1,16 +1,11 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:edit, :update, :destroy]
 
   # GET /tasks
   # GET /tasks.json
   def index
     @tasks = Task.all
     @task = Task.new
-  end
-
-  # GET /tasks/1
-  # GET /tasks/1.json
-  def show
   end
 
   # GET /tasks/new
@@ -20,6 +15,11 @@ class TasksController < ApplicationController
 
   # GET /tasks/1/edit
   def edit
+    @task = Task.find(params[:id])
+    respond_to do |format|
+        format.html { redirect_to tasks_url }
+        format.js {}
+    end
   end
 
   # POST /tasks
@@ -31,10 +31,9 @@ class TasksController < ApplicationController
       if @task.save
         format.html { redirect_to tasks_url }
         format.js {}
-        format.json { render json: @task, status: :created, location: @task }
       else
-        format.html { render :new }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
+        format.html {}
+        format.js { render :error, locals: { error_message: "Pls, write something to filed" } }
       end
     end
   end
@@ -45,9 +44,10 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.update(task_params)
         format.html { redirect_to tasks_url }
+        format.js {}
       else
         format.html { render :edit }
-        format.json { render json: @errors, status: :unprocessable_entity }
+        format.js { render :error, locals: { error_message: "Pls, write something to field" } }
       end
     end
   end
@@ -58,7 +58,6 @@ class TasksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to tasks_url, notice: 'Task was successfully destroyed.' }
       format.js {}
-      format.json { render json: @task }
     end
     @task.destroy
   end
