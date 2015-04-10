@@ -1,5 +1,4 @@
-<tr id="task_<%= task.id %>" >
-
+<tr id="task_<%= task.id %>" class="item" >
   <td class="td_move"><%= image_tag('move.png') %></td>
   <td class="td_checkbox">
     <%= form_for task, remote: true do |f| %>

@@ -4,8 +4,16 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    @tasks = Task.rank(:row_order).all
     @task = Task.new
+  end
+
+  def update_row_order
+    @task = Task.find(params['task']['task_id'])
+    @task.row_order_position = params['task']['position']
+    @task.save
+
+    render nothing: true
   end
 
   # GET /tasks/new
@@ -70,6 +78,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:title, :done)
+      params.require(:task).permit(:title, :done, :id)
     end
 end

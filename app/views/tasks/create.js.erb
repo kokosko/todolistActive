@@ -1,2 +1,2 @@
-$("<%= j(render @task) %>").appendTo("#tasks");
+$("<%= j(render @task) %>").appendTo("#tasks").effect('highlight', {}, 1000);
 $("#task_title").val("");
